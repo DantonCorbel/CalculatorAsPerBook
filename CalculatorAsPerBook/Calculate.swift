@@ -53,6 +53,7 @@ struct Calculate {
             case .subtract:
                 answer = x-y
             case .divide:
+                guard y != 0 else {return}
                 answer = x/y
             case .multiply:
                 answer = x*y
@@ -62,6 +63,5 @@ struct Calculate {
 
 enum Sign {
     case add, subtract, divide, multiply
-    
-    
+
 }
