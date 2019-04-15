@@ -24,6 +24,11 @@ struct Calculate {
         storeNumberThree = Double(display)!
     }
     
+    mutating func changeSign() {
+        storeNumberThree -= (storeNumberThree*2)
+        display = String(storeNumberThree)
+    }
+    
     mutating func storeToNumberOne() {
         storeNumberOne = Double(display)!
         display = ""
