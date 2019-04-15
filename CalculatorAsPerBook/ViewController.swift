@@ -70,6 +70,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func equalsButtonTapped(_ sender: UIButton) {
+        equals()
     }
     @IBAction func alternativeSignButtonTapped(_ sender: UIButton) {
     }
@@ -100,6 +101,13 @@ class ViewController: UIViewController {
         for button in signButtons {
             button.backgroundColor = UIColor.red
         }
+    }
+    
+    func equals() {
+        calculate.storeToNumberTwo()
+        calculate.makeCalculation(x: calculate.storeNumberOne, y: calculate.storeNumberTwo, sign: calculate.signCase)
+        displayLabel.text = String(calculate.answer)
+        calculate.storeNumberOne = calculate.answer
     }
 }
 
