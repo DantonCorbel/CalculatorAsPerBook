@@ -48,7 +48,7 @@ class ViewController: UIViewController {
         sender.backgroundColor = UIColor.orange
         
         if calculate.display.isEmpty {
-            //this allows change in signs if press wrong sign button
+            //this allows change in signs if press wrong sign button, but only once!
         }
         else if calculate.storeNumberOne == 0 {
             calculate.storeToNumberOne()
