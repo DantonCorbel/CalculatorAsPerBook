@@ -55,22 +55,20 @@ class ViewController: UIViewController {
             
             print("Sign button: storeOne: \(calculate.storeNumberOne), storeTwo: \(calculate.storeNumberTwo), storeThree: \(calculate.storeNumberThree), display: \(calculate.display), sign: \(sign), signCase: \(calculate.signCase)")
         } else if calculate.storeNumberTwo == 0 {
-            calculate.storeToNumberTwo()
-            calculate.makeCalculation(x: calculate.storeNumberOne, y: calculate.storeNumberTwo, sign: calculate.signCase)
-            displayLabel.text = String(calculate.answer)
-            calculate.storeNumberOne = calculate.answer
+            equals()
+            
+            print("Sign after equals button: storeOne: \(calculate.storeNumberOne), storeTwo: \(calculate.storeNumberTwo), storeThree: \(calculate.storeNumberThree), display: \(calculate.display), sign: \(sign), answer: \(calculate.answer)")
+            
             calculate.display = "0"
-            
-            print("Sign button: storeOne: \(calculate.storeNumberOne), storeTwo: \(calculate.storeNumberTwo), storeThree: \(calculate.storeNumberThree), display: \(calculate.display), sign: \(sign), answer: \(calculate.answer)")
-            
-            calculate.storeNumberTwo = 0
         }
+        
         calculate.enumCase(sign: sign)
        
     }
     
     @IBAction func equalsButtonTapped(_ sender: UIButton) {
         equals()
+        calculate.display = ""
     }
     @IBAction func alternativeSignButtonTapped(_ sender: UIButton) {
     }
@@ -108,6 +106,10 @@ class ViewController: UIViewController {
         calculate.makeCalculation(x: calculate.storeNumberOne, y: calculate.storeNumberTwo, sign: calculate.signCase)
         displayLabel.text = String(calculate.answer)
         calculate.storeNumberOne = calculate.answer
+        calculate.storeNumberTwo = 0
+        
+        
+        print("Equals button: storeOne: \(calculate.storeNumberOne), storeTwo: \(calculate.storeNumberTwo), storeThree: \(calculate.storeNumberThree), display: \(calculate.display), answer: \(calculate.answer)")
     }
 }
 
