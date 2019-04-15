@@ -76,6 +76,8 @@ class ViewController: UIViewController {
     @IBAction func alternativeSignButtonTapped(_ sender: UIButton) {
     }
     @IBAction func percentSignTapped(_ sender: UIButton) {
+        calculate.percentSign()
+        displayLabel.text = calculate.display
     }
     
     

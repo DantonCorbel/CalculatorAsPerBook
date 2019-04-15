@@ -59,6 +59,11 @@ struct Calculate {
                 answer = x*y
         }
     }
+    
+    mutating func percentSign() {
+        storeNumberThree /= 100
+        display = String(storeNumberThree)
+    }
 }
 
 enum Sign {
