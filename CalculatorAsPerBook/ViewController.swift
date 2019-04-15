@@ -67,6 +67,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func equalsButtonTapped(_ sender: UIButton) {
+        guard !calculate.display.isEmpty else {
+            return
+        }
         equals()
         calculate.display = ""
     }
